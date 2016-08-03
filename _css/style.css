@@ -1,0 +1,13 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+#card {
+	padding: 20 0 0 30;
+}
+#resultados {
+	padding: 10 0 0 1000;
+}
+.inputDigito {
+	left: 4%;
+}

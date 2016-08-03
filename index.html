@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>Calculadora</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="mdl\material.min.js"></script>
+	<!--<script type="text/javascript" src="_script\script.js"</script>-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" type="text/css" href="_css\style.css">
+	<link rel="stylesheet" type="text/css" href="mdl\material.min.css">
+	<link rel="stylesheet" type="text/css" href="mdl\material.css">
+</head>
+
+<script type="text/javascript">
+	function somar(argument) {
+		var x = document.getElementById('x').value;
+		var y = document.getElementById('y').value;
+
+		if (x == "" || y == "")
+		{
+			alert("Os campos são o brigatórios!");
+		}
+		else
+		{
+			var resultadoDaSoma = (parseInt(x) + parseInt(y));
+			alert(resultadoDaSoma);
+
+			var dados = [];
+			dados[0] = x;
+			dados[1] = y;
+			dados[2] = resultadoDaSoma;
+
+			for (var cont = 0; cont < dados.length; cont++) {
+				alert(dados[cont])
+				//adicionar na tabela de resultados...
+			}
+		}
+	}
+</script>
+
+<body>
+<div id="card">
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  	<div class="mdl-card__title">
+    	<h2 class="mdl-card__title-text">Vamos somar</h2>
+  	</div>
+
+	<form name="calculadora">
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label inputDigito">
+    		<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="x">
+    		<label class="mdl-textfield__label" for="x">Digite x:</label>
+    		<span class="mdl-textfield__error">Apenas números inteiros!</span>
+  		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label inputDigito">
+    		<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="y">
+    		<label class="mdl-textfield__label" for="y">Digite y:</label>
+    		<span class="mdl-textfield__error">Apenas números inteiros!</span>
+  		</div>
+	</form>
+	
+	<center>
+	<div class="mdl-card__actions mdl-card--border">
+    	<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="somar()">=</a>
+	</div>
+	</center>
+  	
+  	<div class="mdl-card__menu">
+    	<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class="material-icons">add</i></button>
+  	</div>
+</div>
+</div>
+
+<div id="resultados">
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+  	<thead>
+    	<tr>
+      		<th>x</th>
+      		<th>y</th>
+      		<th class="mdl-data-table__cell--non-numeric">Resultado</th>
+    	</tr>
+  </thead>
+  <tbody>
+    	<tr>
+      		<td>20</td>
+      		<td>25</td>
+      		<td class="mdl-data-table__cell--non-numeric">45</td>
+    	</tr>
+  </tbody>
+</table>	
+</div>
+</body>
+</html>
