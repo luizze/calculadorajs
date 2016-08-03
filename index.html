@@ -10,33 +10,6 @@
 	<link rel="stylesheet" type="text/css" href="mdl\material.css">
 </head>
 
-<script type="text/javascript">
-	function somar(argument) {
-		var x = document.getElementById('x').value;
-		var y = document.getElementById('y').value;
-
-		if (x == "" || y == "")
-		{
-			alert("Os campos são o brigatórios!");
-		}
-		else
-		{
-			var resultadoDaSoma = (parseInt(x) + parseInt(y));
-			alert(resultadoDaSoma);
-
-			var dados = [];
-			dados[0] = x;
-			dados[1] = y;
-			dados[2] = resultadoDaSoma;
-
-			for (var cont = 0; cont < dados.length; cont++) {
-				alert(dados[cont])
-				//adicionar na tabela de resultados...
-			}
-		}
-	}
-</script>
-
 <body>
 <div id="card">
 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
@@ -78,13 +51,32 @@
       		<th class="mdl-data-table__cell--non-numeric">Resultado</th>
     	</tr>
   </thead>
-  <tbody>
-    	<tr>
-      		<td>20</td>
-      		<td>25</td>
-      		<td class="mdl-data-table__cell--non-numeric">45</td>
-    	</tr>
-  </tbody>
+  
+<script type="text/javascript">
+	function somar(argument) {
+		var x = document.getElementById('x').value;
+		var y = document.getElementById('y').value;
+
+		if (x == "" || y == "")
+		{
+			alert("Os campos são o brigatórios!");
+		}
+		else
+		{
+			var resultadoDaSoma = (parseInt(x) + parseInt(y));
+			
+			var dados = [{"numeroX": x, "numeroY": y, "resultado": resultadoDaSoma}];
+			
+			var out = "<tbody>"	
+				
+			for (var cont = 0; cont < dados.length; cont++) {
+				out += "<tr><td>" + dados[cont].numeroX + "</td><td>" + dados[cont].numeroY + "</td><td class='mdl-data-table__cell--non-numeric'>" + dados[cont].resultado + "</td></tr>";
+			}
+			out += "</tbody>";
+		}
+	}
+</script>
+
 </table>	
 </div>
 </body>
